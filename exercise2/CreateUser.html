@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <script>
+   function onSubmit(){
+	let username = document.getElementById("name").value;
+	if (username.length == 0){
+		alert("Your name must be at least 1 character long.")
+		return false;
+	}
+   }
+  </script>
+ </head>
+ <body>
+	<form onsubmit="return onSubmit()" action="CreateUser.php" method="post">
+ Input your username: 
+		<input type="text" name="user" id="name">
+		<input type="submit">
+	</form>
+ </body>
+
+</html>
