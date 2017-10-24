@@ -7,17 +7,14 @@ if ($mysqli->connect_errno){
 exit();
 }
 $query = "SELECT * FROM Users WHERE Name='$user'";
-echo $query;
-echo "</br>";
 if ($result = $mysqli->query($query))
 {
-	$create = "INSERT INTO Posts('Content', 'author_id');
-	echo $create;
+	$create = "INSERT INTO Posts (Content, Author) VALUES ('$post', '$user')";
 	if ($mysqli->query($create)){
 		echo "Post Added";
 	}
 	else{
-		"The user exists, but the post could not be created.";
+	   echo	"The user exists, but the post could not be created.";
 	}
 }
 else
